@@ -1,0 +1,15 @@
+﻿<Window x:Class="Avilesa.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Avilesa"
+        mc:Ignorable="d"
+        Title="Avilesa" Height="250" Width="500" ResizeMode="NoResize">
+    <Grid>
+        <Button x:Name="btnMunicipios" Content="Consultar municipios" HorizontalAlignment="Center" Margin="0,0,200,75" VerticalAlignment="Center" Width="150" Height="50"  Click="btnMunicipios_Click"/>
+        <Button x:Name="btnItinerarios" Content="Consultar itinerarios" HorizontalAlignment="Center" Margin="200,0,0,75" VerticalAlignment="Center" Width="150" Height="50"  Click="btnItinerarios_Click"/>
+        <Button x:Name="btnParadas" Content="Gestión de paradas" HorizontalAlignment="Center" Margin="0,75,200,0" VerticalAlignment="Center" Width="150" Height="50" Click="btnParadas_Click"/>
+        <Button x:Name="btnLineas" Content="Gestión de lineas" HorizontalAlignment="Center" Margin="200,75,0,0" VerticalAlignment="Center" Width="150" Height="50" Click="btnLineas_Click"/>
+    </Grid>
+</Window>

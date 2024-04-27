@@ -1,0 +1,17 @@
+﻿<Window x:Class="Avilesa.DialogMunicipios"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Avilesa"
+        mc:Ignorable="d"
+        Title="Lista de municipios" Height="450" Width="400">
+    <Grid>
+        <DataGrid x:Name="dgMunicipios" ItemsSource="{Binding lstMunicipios}" AutoGenerateColumns="False" Height="434" VerticalAlignment="Center">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Codigo municipio" Binding="{Binding codigoMunicipio}" Width="150" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Nombre municipio" Binding="{Binding nombre}" Width="250" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

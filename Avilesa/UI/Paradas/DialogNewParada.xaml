@@ -1,0 +1,37 @@
+﻿<Window x:Class="Avilesa.DialogNewParada"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Avilesa"
+        mc:Ignorable="d"
+        Title="Editor de paradas" Height="300" Width="450" ResizeMode="NoResize">
+    <Grid>
+        <ComboBox x:Name="cbNumLinea" ItemsSource="{Binding lstLineas}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="180" Margin="200,50,0,0" VerticalContentAlignment="Center">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+        <Run Text="{Binding NumLinea}" />
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBox x:Name="txtIntervalo" Validation.Error="Validation_Error" Text="{Binding Path=parada.Intervalo, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="180" Margin="200,120,0,0" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="cbCodMunicipio" ItemsSource="{Binding lstMunicipios}" HorizontalAlignment="Left" Margin="200,85,0,0" VerticalAlignment="Top" Width="180" Height="25" VerticalContentAlignment="Center">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                <Run Text="{Binding codigoMunicipio}" />
+                <Run Text=" - " />
+                <Run Text="{Binding nombre}" />
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label Content="Número de línea" HorizontalAlignment="Left" Margin="75,50,0,0" VerticalAlignment="Top" Width="120" Height="25" VerticalContentAlignment="Center"/>
+        <Label Content="Código municipio" HorizontalAlignment="Left" Margin="75,85,0,0" VerticalAlignment="Top" Width="120" Height="25" VerticalContentAlignment="Center"/>
+        <Label Content="Intervalo" HorizontalAlignment="Left" Margin="75,120,0,0" VerticalAlignment="Top" Width="120" Height="25" VerticalContentAlignment="Center"/>
+        <Button x:Name="btnAceptar" Content="Aceptar" HorizontalAlignment="Center" Margin="0,0,150,50" VerticalAlignment="Bottom" Width="100" Height="35" Click="btnAceptar_Click"/>
+        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Center" Margin="150,0,0,50" VerticalAlignment="Bottom" Width="100" Height="35" Click="btnVolver_Click"/>
+    </Grid>
+</Window>

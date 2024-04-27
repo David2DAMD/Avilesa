@@ -1,0 +1,39 @@
+﻿<Window x:Class="Avilesa.UI.Itinerarios.DialogItinerarios"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Avilesa"
+        mc:Ignorable="d"
+        Title="Consulta de itinerarios" Height="450" Width="550" ResizeMode="NoResize">
+    <Window.Resources>
+        <local:MunicipioConverter x:Key="MunicipioConverter" />
+    </Window.Resources>
+    <Grid>
+        <DataGrid x:Name="dgItinerario" ItemsSource="{Binding lstParadasByLinea}" Width="530" AutoGenerateColumns="False" Margin="10,150,10,100">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Municipio" Binding="{Binding CodMunicipio, Converter={StaticResource MunicipioConverter}}"  Width="300" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Intervalo" Binding="{Binding Intervalo}" Width="205" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Center" Margin="0,0,0,30" VerticalAlignment="Bottom" Width="100" Height="35" Click="btnVolver_Click"/>
+        <Label x:Name="lblNumLinea" Content="Número de línea" HorizontalAlignment="Left" Margin="25,25,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbNumLinea" ItemsSource="{Binding lstLineas}" HorizontalAlignment="Left" Margin="150,25,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbNumLinea_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+    <Run Text="{Binding NumLinea}" />
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label x:Name="lblSal" Content="Hora inicial de salida: " HorizontalAlignment="Left" Margin="25,60,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblSalida" HorizontalAlignment="Left" Margin="150,60,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblInter" Content="Intervalo entre buses: " HorizontalAlignment="Left" Margin="25,95,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblIntervalo" HorizontalAlignment="Left" Margin="150,95,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblMunO" Content="Municipio de origen: " HorizontalAlignment="Left" Margin="250,60,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblMunicipioOrigen" HorizontalAlignment="Left" Margin="375,60,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblMunD" Content="Municipio de destino: " HorizontalAlignment="Left" Margin="250,95,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblMunicipioDestino" HorizontalAlignment="Left" Margin="375,95,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
